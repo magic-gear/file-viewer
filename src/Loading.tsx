@@ -3,9 +3,9 @@ import cx from 'classnames'
 
 const Loading = (props) => {
   return (
-    <div className={cx('loading-container', { loading: true })}>
+    <div className={cx('loading-container', { loading: props.loading })}>
       {props.children}
-      {true ? (
+      {props.loading ? (
         <div className={'loading-icon-wrap'}>
           <span className={'loading-icon'}>
             {props.loadingIcon ? (
