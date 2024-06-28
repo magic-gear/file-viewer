@@ -1,0 +1,76 @@
+.mg-viewer-wrapper {
+  height: 100%;
+
+  .mg-viewer {
+    position: relative;
+    height: 100%;
+  }
+
+  .mg-viewer-image {
+    padding: 24px;
+    text-align: center;
+    background-color: #ccc;
+    > img {
+      max-width: 100%;
+    }
+  }
+
+  .error-message {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+
+    .alert {
+      color: #ed1818;
+    }
+  }
+
+  .unsupported-message {
+    padding: 46px;
+    background: white;
+    margin: auto;
+    text-align: center;
+  }
+
+  .loading-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    &.loading {
+      pointer-events: none;
+      user-select: none;
+      opacity: 0.5;
+    }
+    .loading-icon-wrap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 4;
+      max-height: 400px;
+      .loading-icon {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        animation: spin 2s linear infinite;
+        z-index: 2;
+        font-size: 32px;
+        color: #0085ff;
+      }
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
