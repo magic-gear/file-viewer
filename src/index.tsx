@@ -14,17 +14,19 @@ import { Options } from '@js-preview/excel'
 import { Options as DocOptions } from '@js-preview/docx'
 import { Options as PdfOptions } from '@js-preview/pdf'
 
+export interface FileViewerProps {
+  options?: Options | DocOptions | PdfOptions
+  requestOptions?: RequestInit
+  unsupportedComponent?: React.ComponentType<any>
+  errorComponent?: React.ComponentType<any>
+  loadingIcon?: React.ReactNode
+  onError?: (error: Error) => void
+  fileType: string
+  fileUrl: string
+}
+
 const FileViewer: React.FC<
-  {
-    options?: Options | DocOptions | PdfOptions
-    requestOptions?: RequestInit
-    unsupportedComponent?: React.ComponentType<any>
-    errorComponent?: React.ComponentType<any>
-    loadingIcon?: React.ReactNode
-    onError: (error: Error) => void
-    fileType: string
-    fileUrl: string
-  } & React.HTMLAttributes<HTMLDivElement>
+  FileViewerProps & React.HTMLAttributes<HTMLDivElement>
 > = (props) => {
   const { style, className, ...rest } = props
 

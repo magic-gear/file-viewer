@@ -1,6 +1,5 @@
 const path = require('path')
 const isDevMode = process.env.NODE_ENV !== 'production'
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
   entry: './src/index',
@@ -83,5 +82,4 @@ module.exports = {
       },
     ],
   },
-  plugins: [new CleanWebpackPlugin()],
 }

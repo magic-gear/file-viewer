@@ -11,7 +11,7 @@ const DocxViewer: React.FC<{
   loadingIcon?: React.ReactNode
   fileType: string
   fileUrl: string
-  onError: (error: Error) => void
+  onError?: (error: Error) => void
 }> = (props) => {
   const { fileType, fileUrl, onError, options, requestOptions } = props
   const ref = useRef()
