@@ -20,10 +20,10 @@ const PdfViewer = (props) => {
           onError: (e) => {
             if (onError) onError(e)
             setError(e)
-            setLoading(true)
+            setLoading(false)
           },
           onRendered: () => {
-            setLoading(true)
+            setLoading(false)
           },
         },
         requestOptions,

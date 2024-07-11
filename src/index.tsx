@@ -1,11 +1,13 @@
 import React from 'react'
 import './main.scss'
 import {
+  AudioViewer,
   DocxViewer,
   ExcelViewer,
   ImageViewer,
   PdfViewer,
   UnsupportedViewer,
+  VideoViewer,
 } from './drivers'
 import cx from 'classnames'
 
@@ -15,6 +17,7 @@ const FileViewer = (props) => {
   const getDriver = () => {
     switch (props.fileType) {
       case 'csv':
+      case 'xls':
       case 'xlsx': {
         return ExcelViewer
       }
@@ -30,6 +33,13 @@ const FileViewer = (props) => {
       }
       case 'docx': {
         return DocxViewer
+      }
+      case 'mp3': {
+        return AudioViewer
+      }
+      case 'mp4':
+      case 'webm': {
+        return VideoViewer
       }
       default: {
         return UnsupportedViewer

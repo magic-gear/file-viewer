@@ -30,10 +30,7 @@ const DocxViewer = (props) => {
   if (error) return <Error {...props} error={error} />
   return (
     <Loading {...props} loading={loading}>
-      <div
-        className={`mg-viewer mg-viewer-excel mg-viewer-${fileType}`}
-        ref={ref}
-      />
+      <div className={`mg-viewer mg-viewer-${fileType}`} ref={ref} />
     </Loading>
   )
 }

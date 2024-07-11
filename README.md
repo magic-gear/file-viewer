@@ -2,11 +2,15 @@
 
 ## Supported file formats:
 
-- [x] Images: png, jpeg, gif, bmp
+- [x] Images: png, jpg, jpeg, gif, bmp
 - [x] pdf
 - [x] csv
+- [x] xls
 - [x] xlsx
 - [x] docx
+- [x] mp3
+- [x] mp4
+- [x] webm
 
 ## Getting Started
 
