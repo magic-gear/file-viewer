@@ -1,6 +1,9 @@
 import React from 'react'
 
-const Error = (props) => (
+const Error: React.FC<{
+  errorComponent?: React.ComponentType<any>
+  error?: Error
+}> = (props) => (
   <div className="error-message">
     {props.errorComponent ? (
       <props.errorComponent {...props} />

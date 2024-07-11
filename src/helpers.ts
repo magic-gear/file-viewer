@@ -1,8 +1,8 @@
 import { read, write } from 'xlsx'
 
-export function csvToXlsx(fileUrl: string) {
+export function csvToXlsx(fileUrl: string, requestOptions) {
   return new Promise<Blob>((resolve, reject) => {
-    fetch(fileUrl)
+    fetch(fileUrl, requestOptions)
       .then((res) => res.text())
       .then((data) => {
         const workbook = read(data, { type: 'string' })
@@ -19,9 +19,9 @@ export function csvToXlsx(fileUrl: string) {
   })
 }
 
-export function xlsToXlsx(fileUrl: string) {
+export function xlsToXlsx(fileUrl: string, requestOptions) {
   return new Promise<Blob>((resolve, reject) => {
-    fetch(fileUrl)
+    fetch(fileUrl, requestOptions)
       .then((res) => res.arrayBuffer())
       .then((data) => {
         const workbook = read(data, { type: 'array' })

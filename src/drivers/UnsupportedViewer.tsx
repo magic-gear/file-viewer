@@ -1,6 +1,9 @@
 import React from 'react'
 
-const UnsupportedViewer = (props) => {
+const UnsupportedViewer: React.FC<{
+  unsupportedComponent?: React.ComponentType<any>
+  fileType: string
+}> = (props) => {
   return (
     <div className="mg-driver-view">
       <div className="unsupported-message">

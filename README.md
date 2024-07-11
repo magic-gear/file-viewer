@@ -33,7 +33,7 @@ const MyComponent = () => {
   return (
     <FileViewer
       fileType={type}
-      filePath={file}
+      fileUrl={file}
       requestOptions={fetchOptions}
       errorComponent={CustomErrorComponent}
     />

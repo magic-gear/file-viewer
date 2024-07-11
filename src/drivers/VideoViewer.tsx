@@ -1,6 +1,8 @@
 import React from 'react'
 
-const VideoViewer = (props) => {
+const VideoViewer: React.FC<{ fileType: string; fileUrl: string }> = (
+  props,
+) => {
   const { fileType, fileUrl } = props
   return (
     <div className={`mg-viewer mg-viewer-video mg-viewer-${fileType}`}>

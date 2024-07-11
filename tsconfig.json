@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "declaration": true,
+    "outDir": "./dist",
     "baseUrl": "src",
     "module": "commonjs",
     "target": "es2020",

@@ -1,6 +1,8 @@
 import React from 'react'
 
-const AudioViewer = (props) => {
+const AudioViewer: React.FC<{ fileType: string; fileUrl: string }> = (
+  props,
+) => {
   const { fileType, fileUrl } = props
   return (
     <div className={`mg-viewer mg-viewer-audio mg-viewer-${fileType}`}>

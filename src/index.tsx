@@ -10,8 +10,22 @@ import {
   VideoViewer,
 } from './drivers'
 import cx from 'classnames'
+import { Options } from '@js-preview/excel'
+import { Options as DocOptions } from '@js-preview/docx'
+import { Options as PdfOptions } from '@js-preview/pdf'
 
-const FileViewer = (props) => {
+const FileViewer: React.FC<
+  {
+    options?: Options | DocOptions | PdfOptions
+    requestOptions?: RequestInit
+    unsupportedComponent?: React.ComponentType<any>
+    errorComponent?: React.ComponentType<any>
+    loadingIcon?: React.ReactNode
+    onError: (error: Error) => void
+    fileType: string
+    fileUrl: string
+  } & React.HTMLAttributes<HTMLDivElement>
+> = (props) => {
   const { style, className, ...rest } = props
 
   const getDriver = () => {
